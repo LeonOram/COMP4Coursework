@@ -1,12 +1,21 @@
 \chapter{Analysis}
 
 \section{Introduction}
-
+ 
 \subsection{Client Identification}
+My client is Kai Leddy; He works for ESL which is the largest eSports organisation and league. ESL supports over 50 games and runs a number of large tournaments every month. Kai's work focuses on the tournaments for the game Counter Strike: Global Offensive. He helps to organize and run multiple large scale tournaments every year and assists with the creation of the tournament bracket. During the tournament he helps with the production of the show which includes displaying the map vetos as they are happening and showing live stats during the game.
 
 \subsection{Define the current system}
+The current system that is used to organise and run tournaments varies depending on the size and location of the tournament. All the current system involves the use of multiple programs and methods. One current system used in smaller venues involves an organiser getting the map vetos from the players and writing it down on a piece of paper which then needs to be taken to both the graphics department and the casting desk. This system has caused delays in the past and often causes confusion. Another system for map vetos that is used is only available at the largest of tournaments with only ~2 per year being able to use this system.
+The current system for tournament bracket creation currently depends on the tournament format and how teams qualified for the tournament. For example a tournament which teams qualified for via an online tournament would have the place teams in the bracket based on their matches and result on the qualifier whereas a tournament where all teams are invited would place teams either randomly or based on a world ranking system.
 
 \subsection{Describe the problems}
+\begin{itemize}
+	\item \textbf{Use of multiple systems}  - Often causes confusion and each system has it's own pros and cons. Having one system would simplify the process and allow for one system to be continually updated and benefit all events.
+	\item \textbf{Lack of communication} - Current systems rely on somebody running from the team room where the veto happens to the production room and then to the casters to deliver the map vetos. This process takes time and has caused issues with people not receiving the information at all.
+	\item \textbf{Lack of standardised format} - When map vetos are written on a piece of  paper the format can change due to which admin is doing the veto as well as their handwriting. There have been issues in the past with production being unable to read the veto and getting the order wrong due to the format.
+	\item \textbf{Lack of live stats} - The current system relies on the gaming observer to open the scoreboard in game which only has a minimal amount. There is currently no way for production to have live stats they can display on screen.
+\end{itemize}
 
 \subsection{Section appendix}
 
@@ -15,6 +24,19 @@
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
+%this code creates a three column table with the text aligned to the left of each column
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+     User & Map pool & Dust 2 & Program/Report \\ \hline
+     User & Tournament format  & Bo3,BBPPBBP & Program/Report \\ \hline
+     Teams & Map veto & Team1 bans Inferno & Program/Report/Production  \\ \hline
+     Ebot & Player x kill & .... & Database \\
+    \hline
+\end{tabular}
+\label{tab:range_examples}
+\end{center}
 
 \subsubsection{Algorithms}
 
