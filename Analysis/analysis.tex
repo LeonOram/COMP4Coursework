@@ -1,12 +1,14 @@
-\chapter{Analysis}
+ \chapter{Analysis}
 
 \section{Introduction}
  
 \subsection{Client Identification}
-My client is Kai Leddy; He works for ESL which is the largest eSports organisation and league. ESL supports over 50 games and runs a number of large tournaments every month. Kai's work focuses on the tournaments for the game Counter Strike: Global Offensive. He helps to organize and run multiple large scale tournaments every year and assists with the creation of the tournament bracket. During the tournament he helps with the production of the show which includes displaying the map vetos as they are happening and showing live stats during the game.
+My client is Kai Leddy; He is 23 years old, he has a lot of experience working with computers for many tasks including software development.\par
+Kai works for ESL which is the largest eSports organisation and league. ESL supports over 50 games and runs a number of large tournaments every month. Kai's work focuses on the tournaments for the game Counter Strike: Global Offensive. He helps to organize and run multiple large scale tournaments every year and assists with the creation of the tournament bracket. During the tournament he helps with the production of the show which includes displaying the map vetos as they are happening and showing live stats during the game.\par
+Kai feels like the current systems that are being used within the company are slow, confusing and outdated and would like to test a new system to help improve efficiency.
 
 \subsection{Define the current system}
-The current system that is used to organise and run tournaments varies depending on the size and location of the tournament. All the current system involves the use of multiple programs and methods. One current system used in smaller venues involves an organiser getting the map vetos from the players and writing it down on a piece of paper which then needs to be taken to both the graphics department and the casting desk. This system has caused delays in the past and often causes confusion. Another system for map vetos that is used is only available at the largest of tournaments with only ~2 per year being able to use this system.
+The current system that is used to organise and run tournaments varies depending on the size and location of the tournament. All the current system involves the use of multiple programs and methods. One current system used in smaller venues involves an organiser getting the map vetos from the players and writing it down on a piece of paper which then needs to be taken to both the graphics department and the casting desk. This system has caused delays in the past and often causes confusion. Another system for map vetos that is used is only available at the largest of tournaments with only ~2 per year being able to use this system.\par
 The current system for tournament bracket creation currently depends on the tournament format and how teams qualified for the tournament. For example a tournament which teams qualified for via an online tournament would have the place teams in the bracket based on their matches and result on the qualifier whereas a tournament where all teams are invited would place teams either randomly or based on a world ranking system.
 
 \subsection{Describe the problems}
@@ -18,27 +20,75 @@ The current system for tournament bracket creation currently depends on the tour
 \end{itemize}
 
 \subsection{Section appendix}
+%Interview with client notes
 
 \section{Investigation}
 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-%this code creates a three column table with the text aligned to the left of each column
+In the current system there are two main data sources, the tournament organisers and the teams playing. The organisers will set the map pool, format and tournament bracket and will pass this data onto the teams first to confirm the details and then release the details to the viewers
 \begin{center}
+
 \begin{tabular}{|l|l|l|l|}
+
     \hline
     \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
-     User & Map pool & Dust 2 & Program/Report \\ \hline
-     User & Tournament format  & Bo3,BBPPBBP & Program/Report \\ \hline
-     Teams & Map veto & Team1 bans Inferno & Program/Report/Production  \\ \hline
-     Ebot & Player x kill & .... & Database \\
+     Tournament Organisers & Map pool & Dust 2, Train etc.. & Viewer,Production,Teams \\ \hline
+     Tournament Organisers & Tournament format  & Bo3,BBPPBBP & Viewers,Production,Teams\\ \hline
+     Teams & Map veto & Team1 bans Inferno & Viewers,Production  \\ \hline
+     Ingame Observer & Player Stats & OlofM 13-2-4 & Database \\
     \hline
 \end{tabular}
+\label{tab:range_examples}
+
+%\setlength{\tabcolsep}{13.5pt}
+%\begin{tabular}{|l|l|l|l|}
+%    \hline
+%    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+%     User                & Map pool & Dust 2 & Program/Report \\ \hline
+%     User & Tournament format  & Bo3,BBPPBBP & Program/Report \\ \hline
+%     Teams & Map veto & Team1 bans Inferno & Program/Report/Production  \\ \hline
+%     Ebot & Player x kill & .... & Database \\
+%    \hline
+%\end{tabular}
 \label{tab:range_examples}
 \end{center}
 
 \subsubsection{Algorithms}
+
+\begin{algorithm}[H]
+\label{fig:repeat_as_while_pseudo_example_2}
+    \caption{While Loop Representation}
+\begin{algorithmic}[1]
+\SET{$veto\_complete$}{$False$}
+\SET{$maps\_playing$}{}
+\State
+\While{$veto\_complete = False$}
+    \For{$(Len(map\_pool)-1)/2$}
+    
+    \If{$format\_stage = Ban$}
+        \SET{$map\_pool$}{$map\_pool - \textbf{USERINPUT} $}
+    \ElsIf{$format\_stage = Pick$}
+    	\SET
+    \Else
+    	\
+    \EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+%
+%\begin{lstlistings}
+%WHILE (veto_complete = False)DO
+%	FOR((no_of_maps - 1) /2)DO
+%		Team 1 veto stage
+%		Team 2 veto stage
+%	add last map to maps to be played
+%	veto_complete <- True
+%give veto sheet to production
+%create and show stream graphic
+%give veto info to casters
+%\end{lstlisting}
 
 \subsubsection{Data flow diagram}
 
@@ -49,9 +99,9 @@ The current system for tournament bracket creation currently depends on the tour
 \subsubsection{Data sources and destinations}
 
 \subsubsection{Data flow diagram}
-
+	%create from paper version
 \subsubsection{Data dictionary}
-
+	%%
 \subsubsection{Volumetrics}
 
 \section{Objectives}
