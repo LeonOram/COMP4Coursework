@@ -1,4 +1,4 @@
- \chapter{Analysis}
+\chapter{Analysis}
 
 \section{Introduction}
  
@@ -39,8 +39,9 @@ In the current system there are two main data sources, the tournament organisers
      Teams & Map veto & Team1 bans Inferno & Viewers,Production  \\ \hline
      Ingame Observer & Player Stats & OlofM 13-2-4 & Database \\
     \hline
+	
 \end{tabular}
-\label{tab:range_examples}
+%\label{tab:range_examples}
 
 %\setlength{\tabcolsep}{13.5pt}
 %\begin{tabular}{|l|l|l|l|}
@@ -52,43 +53,32 @@ In the current system there are two main data sources, the tournament organisers
 %     Ebot & Player x kill & .... & Database \\
 %    \hline
 %\end{tabular}
-\label{tab:range_examples}
+%\label{tab:range_examples}
 \end{center}
 
 \subsubsection{Algorithms}
 
-\begin{algorithm}[H]
-\label{fig:repeat_as_while_pseudo_example_2}
-    \caption{While Loop Representation}
-\begin{algorithmic}[1]
-\SET{$veto\_complete$}{$False$}
-\SET{$maps\_playing$}{}
-\State
-\While{$veto\_complete = False$}
-    \For{$(Len(map\_pool)-1)/2$}
-    
-    \If{$format\_stage = Ban$}
-        \SET{$map\_pool$}{$map\_pool - \textbf{USERINPUT} $}
-    \ElsIf{$format\_stage = Pick$}
-    	\SET
-    \Else
-    	\
-    \EndIf
-\EndWhile
-\end{algorithmic}
-\end{algorithm}
-%
-%\begin{lstlistings}
-%WHILE (veto_complete = False)DO
-%	FOR((no_of_maps - 1) /2)DO
-%		Team 1 veto stage
-%		Team 2 veto stage
-%	add last map to maps to be played
-%	veto_complete <- True
-%give veto sheet to production
-%create and show stream graphic
-%give veto info to casters
-%\end{lstlisting}
+%\begin{algorithm}[H]
+%\label{fig:repeat_as_while_pseudo_example_2}
+%    \caption{While Loop Representation}
+%\begin{algorithmic}[1]
+%\SET{$veto\_complete$}{$False$}
+%\SET{$maps\_playing$}{$ $}
+%\State
+%\While{$veto\_complete = False$}
+%    \For{$(Len(map\_pool)-1)/2$}
+%    
+%    \If{$format\_stage = Ban$}
+%        \SET{$map\_pool$}{$map\_pool - \textbf{USERINPUT} $}
+%    \ElsIf{$format\_stage = Pick$}
+%    	\SET{$maps\_playing$}{$\textbf{USERINPUT}$}
+%    \Else
+%    	\SET{$maps\_playing$}{Random from remaining}
+%    \EndIf
+%\EndWhile
+%\end{algorithmic}
+%\end{algorithm}
+
 
 \subsubsection{Data flow diagram}
 
@@ -101,7 +91,27 @@ In the current system there are two main data sources, the tournament organisers
 \subsubsection{Data flow diagram}
 	%create from paper version
 \subsubsection{Data dictionary}
-	%%
+\begin{center}
+	\begin{tabular}{|l|l|l|l|p{2.5cm}|l|}
+	\hline
+	\textbf{Name}&\textbf{Data type}&\textbf{Length}&\textbf{Validation}&\textbf{Example Data}&\textbf{Comment} \\ \hline
+	TeamID&Interger&1-255&Range&3& \\ \hline
+	TeamName&String&3-32 Characters & Length & Fnatic & \\ \hline
+	TeamNationality&String&2-32 Characters & Length & Sweedish & \\ \hline
+	TeamCoach&String&4-32 Characters & Length & Vuggo & \\ \hline
+	TeamRanking&Interger&1-255&Range&1& \\ \hline
+	TeamYearFounded%String%4 Charcters & Length & 2004 & \\ \hline
+	TournamentID & Interger&1-255&Range&1& \\ \hline
+	TournamentVenue & String & 2-32 Characters&Length& Polyvalent Hall& \\ \hline
+	TournamentCity & String & 3-16&Length&Cluj-Napoca& \\ \hline
+	TournamentCountry&String&2-16&Length&Romanina& \\ \hline
+	TournamentNoOfTeams&Interger&4-64&Range&16& \\ \hline
+	TournamentFormat&String&4-255&Length&Groups + Single elimination& \\ \hline
+	MatchID&Interger&1-1000&Range&4& \\ \hline
+
+	
+\end{tabular}
+\end{center}
 \subsubsection{Volumetrics}
 
 \section{Objectives}
